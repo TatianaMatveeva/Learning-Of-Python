@@ -1,0 +1,51 @@
+import turtle
+
+speed = 5
+
+def moveUP():
+  x = pen.position() [0]
+  y = pen.position() [1]
+  pen.setposition(x, y+speed)
+
+def moveDown():
+  x, y = pen.position()
+  pen.setposition(x, y-speed)
+
+def moveLeft():
+  x, y = pen.position()
+  pen.setposition(x-speed, y)
+
+def moveRight():
+  x, y = pen.position()
+  pen.setposition(x+speed, y)
+
+def change():
+  if pen.invisible():
+    pen.up()
+    pen.hidetuple()
+  else:
+    pen.down()
+    pen.showturtle
+
+
+def speedUP():
+  global speed
+  speed+=1
+
+def speedDown():
+  global speed
+  speed = max(0, speed-1)
+
+window = turtle.Screen()
+pen = turtle.Turtle()
+
+window.onkey(moveUP, "UP")
+window.onkey(moveDown, "Down")
+window.onkey(moveLeft, "Left")
+window.onkey(moveRight, "Right")
+window.onkey(change, "space" )
+window.onkey(speedUP, "q" )
+window.onkey(speedDown, "w" )
+
+window.listen()
+window.mainloop()
